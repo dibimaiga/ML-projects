@@ -2,6 +2,8 @@ import sys #any exception that will be controlled, the info will be find automat
 #permet d'accéder aux informations sur les exceptions
 #Sera utilisé dans la fonction error_message_detail() pour capturer les détails de l'erreur
 
+from src.logger import logging #Checking  the logs 
+
 def error_message_detail(error,error_detail:sys):
     """
     Rôle : Crée une fonction qui va formater un message d'erreur détaillé
@@ -87,7 +89,6 @@ error_detail:sys : l'objet sys pour capturer les détails
         """
         return self.error_message #Retourne le message d'erreur détaillé quand on fait print(exception) ou str(exception)
     
-# import logging
 # if __name__ =="__main__":
 #     try:
 #         a=1/0
