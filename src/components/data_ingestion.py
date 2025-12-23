@@ -15,6 +15,10 @@ from sklearn.model_selection import train_test_split
 
 from dataclasses import dataclass #(used to create class variables)
 
+from src.components.data_transformation import DataTransformation
+from src.components.data_transformation import DataTransformationConfig # Just to check everything is working fine
+
+
 # In order to implement the dataingestion component there should be some input required
 #for exemple where will I save the train dataset or test dataset or even the raw data 
 
@@ -66,7 +70,11 @@ class DataIngestion: #here w're not just gonna crete class variables, there will
 
 if __name__ == "__main__":
     obj = DataIngestion() #initialization(data ingestion object)
-    obj.initiate_data_ingestion()
+    train_data,test_data = obj.initiate_data_ingestion()
+
+#So abve we've combined dataingestion then down we've combined DataTransformation
+    data_transformation = DataTransformation()  # To initialize (and you'll see that it will be able to call this self.data_transformation_config function)
+    data_transformation.initiate_data_transformation(train_data,test_data)
 
 
 
